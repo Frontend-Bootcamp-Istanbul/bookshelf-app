@@ -31,7 +31,7 @@ class Homepage extends React.Component{
     /// Searchteme gore filter
     if(this.props.searchTerm){
       filteredBooks = filteredBooks.filter((book) => {
-        return book.title.toLowerCase().indexOf(this.props.searchTerm.toLowerCase()) > -1
+        return ((book.title.toLowerCase().indexOf(this.props.searchTerm.toLowerCase()) > -1) || (book.author.toLowerCase().indexOf(this.props.searchTerm.toLowerCase()) > -1))
       })
     }
 
