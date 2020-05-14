@@ -5,7 +5,7 @@ import {StyledBookCard} from "./BookStyles";
 import {Link} from "react-router-dom";
 
 const Book = (props) => {
-    const {imageUrl, rating, title, id} = props;
+    const {imageUrl, rating, title, id,review,url} = props;
     return (
             <StyledBookCard>
                 <CardImg top width="100%" src={imageUrl} alt={title} />
@@ -21,6 +21,12 @@ const Book = (props) => {
                     </CardLink>
                     <CardLink>
                         <Link to={`/edit-book/${id}`}>Edit Book</Link>
+                    </CardLink>
+                    <CardText>
+                       Review: {review}
+                    </CardText>
+                    <CardLink>
+                        <a target="_blank" rel="noopener noreferrer" href ={url} > Good Read Link: </a>
                     </CardLink>
                 </CardBody>
             </StyledBookCard>
